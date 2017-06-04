@@ -32,7 +32,6 @@
                                 <state key="normal" title="Stop Recording"/>
                                 <connections>
                                     <action selector="stopRecordingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1uZ-RL-WOj"/>
-                                    <segue destination="t1T-oX-7Qf" kind="show" id="9cV-zz-UhW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap for Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ij-aw-P0F">
@@ -58,16 +57,17 @@
                         <outlet property="recordingLabel" destination="6ij-aw-P0F" id="Yma-XT-9yT"/>
                         <outlet property="startRecordingButton" destination="rsl-Vr-QWe" id="6dX-gJ-3cF"/>
                         <outlet property="stopRecordingButton" destination="5tK-0o-h2S" id="dvv-mQ-GaK"/>
+                        <segue destination="t1T-oX-7Qf" kind="show" identifier="stopRecording" id="phB-sR-JYZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1185" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="8b9-bk-T3O">
             <objects>
-                <viewController id="t1T-oX-7Qf" sceneMemberID="viewController">
+                <viewController id="t1T-oX-7Qf" customClass="PlaySoundsViewController" customModule="PitchPerfect2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NSE-WC-7lC"/>
                         <viewControllerLayoutGuide type="bottom" id="0tm-nD-PTQ"/>
