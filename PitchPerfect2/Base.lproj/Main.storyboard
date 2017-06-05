@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -75,7 +76,23 @@
                     <view key="view" contentMode="scaleToFill" id="w6Z-dj-b9E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.88388772631677803" green="1" blue="0.19009772970730987" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZcF-5z-kHT">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-0K-h6t">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="536"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0tm-nD-PTQ" firstAttribute="top" secondItem="ZcF-5z-kHT" secondAttribute="bottom" id="1Hc-jS-dkC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZcF-5z-kHT" secondAttribute="trailing" id="Fsb-KT-hcY"/>
+                            <constraint firstItem="ZcF-5z-kHT" firstAttribute="top" secondItem="NSE-WC-7lC" secondAttribute="bottom" id="V3s-sZ-jKz"/>
+                            <constraint firstItem="ZcF-5z-kHT" firstAttribute="leading" secondItem="w6Z-dj-b9E" secondAttribute="leadingMargin" id="ixM-ao-XPq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNn-zm-lXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
