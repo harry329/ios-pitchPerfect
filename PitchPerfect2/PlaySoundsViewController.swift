@@ -20,35 +20,48 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     
     var recordedAudioURL : NSURL!
+    var audioFile:AVAudioFile!
+    var audioEngine:AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var stopTimer: NSTimer!
     
-    @IBAction func playSoundForButton(_ sender: UIButton) {
-        print("play sound button pressed")
+    enum ButtonType: Int {
+        case slow = 1, fast = 0, chipmunk = 3, vader = 4, echo = 5, reverb = 6
     }
     
-    @IBAction func stopButtonPressed(_ sender: AnyObject) {
-        print("stop button pressed")
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
+    }
+    
+    @IBAction func playSoundForButton(sender: UIButton) {
+        switch(ButtonType(rawValue: sender.tag)!) {
+        case .slow:
+            playSound(pitch: 1000)
+        case .fast:
+            playSound(pitch: 1000)
+        case .chipmunk:
+            playSound(pitch: 1000)
+        case .vader:
+            playSound(pitch: -1000)
+        case .echo:
+            playSound(echo: true)
+        case .reverb:
+            playSound(reverb: true)
+        }
+        
+        configureUI(.playing)
+    }
+    
+    @IBAction func stopButtonPressed(sender: AnyObject) {
+        stopAudio()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupAudio()
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
